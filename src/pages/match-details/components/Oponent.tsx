@@ -2,7 +2,7 @@ import { BiBadge } from "react-icons/bi";
 
 const Oponent  = ()=>{
     return(
-        <div className="flex flex-col w-[320px] h-[64px] rounded-[8px] items-center justify-center">
+        <div className="flex flex-col w-[148px] md:w-[320px] h-[64px] rounded-[8px] items-center justify-center">
             <div className="flex flex-row justify-start">
                 <BiBadge className="h-[42px] w-[42px]"/>
               

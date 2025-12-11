@@ -80,3 +80,7 @@ export interface EventButton{
     buttonIcon:React.ElementType |null;
     buttonIsActive:boolean;
 }
+export interface LiveScoreMenu{
+    name:string;
+    href:string;
+}

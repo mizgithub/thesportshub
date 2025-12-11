@@ -3,7 +3,7 @@ import MatchHead from "./components/MatchHead";
 const MatchDetails = ()=>{
     // const {eventId} = useParams();
     return(
-        <div>
+        <div className="w-full">
             <MatchHead />
         </div>
     );

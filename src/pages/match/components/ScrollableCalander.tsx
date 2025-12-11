@@ -63,7 +63,7 @@ const HorizontalCalendar = () => {
   return (
     <div 
       ref={calendarRef}
-      className="flex overflow-x-auto whitespace-nowrap shadow-md scrollbar-hide bg-gradient-to-r from-[#181921] via-[#ffffff] to-[#181921] bg-clip-text text-transparent"
+      className="flex overflow-x-auto  scrollbar-hide bg-gradient-to-r from-[#181921] via-[#ffffff] to-[#181921] bg-clip-text text-transparent"
       // Reminder: you need the custom CSS for `scrollbar-hide`
     >
       {dates.map((day: CalendarDay) => (
