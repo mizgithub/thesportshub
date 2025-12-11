@@ -28,8 +28,8 @@ const options:EventButton[] = [
 ]
 
 const LiveOptions = ()=>{
-    const [optionButtons, setOptionButtons] = useState<EventButton[]>(options);
-
+    const [optionButtons] = useState<EventButton[]>(options);
+    
     return(
         <div className="flex flex-row w-full md-[w-328px] gap-[16px] h-[36px]">
             {

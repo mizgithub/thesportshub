@@ -1,6 +1,6 @@
 import type { TeamDetail } from "../../../types";
 import { FaCheck } from "react-icons/fa";
-import RedCard from '../../../assets/RedCard.svg?react';
+// import RedCard from '../../../assets/RedCard.svg?react';
 import YellowCard from '../../../assets/YellowCard.svg?react';
 
 
