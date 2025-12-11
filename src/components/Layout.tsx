@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 
 const Layout = ()=>{
     return(
-        <div className="min-h-screen bg-zinc-900 text-white">
+        <div className="min-h-screen bg-[#181921] text-white">
            <div>
               
                  <Link to="/" >Home</Link>
@@ -12,7 +12,7 @@ const Layout = ()=>{
                  <Link to ="match/145">Match45</Link>
                  
            </div>
-           <main className="mx-auto w-full md:w-[820px] border-gray-100">
+           <main className="mx-auto w-full md:w-[820px] border-gray-100 p-[16px]">
                 <Outlet />
            </main>
    

@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.10.1"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "tailwindcss": "^4.1.17",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-svgr": "^4.5.0"
   }
 }
