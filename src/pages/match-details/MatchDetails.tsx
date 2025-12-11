@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
-
+// import { useParams } from "react-router-dom";
+import MatchHead from "./components/MatchHead";
 const MatchDetails = ()=>{
-    const {eventId} = useParams();
+    // const {eventId} = useParams();
     return(
         <div>
-            match details {eventId}
+            <MatchHead />
         </div>
     );
 }
