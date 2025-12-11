@@ -12,7 +12,7 @@ const Layout = ()=>{
                  <Link to ="match/145">Match45</Link>
                  
            </div>
-           <main className="mx-auto w-full md:w-[820px] border-gray-100 p-[16px]">
+           <main className="mx-auto w-full md:w-[820px] border-gray-100">
                 <Outlet />
            </main>
    

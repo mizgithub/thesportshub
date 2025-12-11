@@ -8,7 +8,7 @@ const Match = ()=>{
     const {events} = useLiveEvents();
     console.log(events);
     return (
-        <div className="flex flex-col gap-[16px]">
+        <div className="flex flex-col gap-[16px] p-[16px]">
             <div className="hidden lg:block">
                 <h3 className="text-[20px] font-[500] leading-[26px] text-white">Matches</h3>
             </div>
