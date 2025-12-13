@@ -19,25 +19,25 @@ const formatDate = (date: Date): { dayName: string, monthDay: string } => {
   const monthDayOptions: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short' };
   // Using replace to remove common commas or unwanted characters from the locale format
   const monthDay = date.toLocaleDateString(undefined, monthDayOptions)
-                       .toUpperCase()
-                       .replace(',', '')
-                       .trim().split(" ").reverse().join(" "); 
+    .toUpperCase()
+    .replace(',', '')
+    .trim().split(" ").reverse().join(" ");
 
   return { dayName, monthDay };
 };
 
 const HorizontalCalendar = () => {
   const today = new Date();
-  const daysToShow = 3; 
+  const daysToShow = 3;
   const calendarRef = useRef<HTMLDivElement>(null);
   const todayRef = useRef<HTMLDivElement>(null); // Type the ref for the 'today' element
 
- const dates: CalendarDay[] = Array.from({ length: daysToShow * 2 + 1 }, (_, i) => {
+  const dates: CalendarDay[] = Array.from({ length: daysToShow * 2 + 1 }, (_, i) => {
     const date = new Date();
     date.setDate(today.getDate() + (i - daysToShow));
-    
+
     // Use the updated formatting function:
-    const { dayName, monthDay } = formatDate(date); 
+    const { dayName, monthDay } = formatDate(date);
     const isToday = date.toDateString() === today.toDateString();
 
     return { date, dayName, monthDay, isToday };
@@ -49,22 +49,23 @@ const HorizontalCalendar = () => {
       const todayElement = todayRef.current;
 
       // Calculate the scroll position to center "today" in the viewport
-      const scrollPosition = todayElement.offsetLeft - 
-                             (scrollContainer.clientWidth / 2) + 
-                             (todayElement.clientWidth / 2);
-                             
+      const scrollPosition = todayElement.offsetLeft -
+        (scrollContainer.clientWidth / 2) +
+        (todayElement.clientWidth / 2);
+
       scrollContainer.scrollTo({
         left: scrollPosition,
-        behavior: 'smooth' 
+        behavior: 'smooth'
       });
     }
   }, []);
 
   return (
-    <div 
+    <div className='relative'>
+      <div
       ref={calendarRef}
-      className="flex overflow-x-hidden gap-[8px] scrollbar-hide bg-gradient-to-r from-[#181921] via-[#ffffff] to-[#181921] bg-clip-text text-transparent"
-      // Reminder: you need the custom CSS for `scrollbar-hide`
+      className="flex overflow-x-auto gap-[8px] "
+    // Reminder: you need the custom CSS for `scrollbar-hide`
     >
       {dates.map((day: CalendarDay) => (
         <div
@@ -78,6 +79,15 @@ const HorizontalCalendar = () => {
         </div>
       ))}
     </div>
+
+      <div className="pointer-events-none absolute inset-0 flex justify-between">
+        <div className="w-100 bg-gradient-to-r from-[#181921] to-transparent" />
+        <div className="w-100 bg-gradient-to-l from-[#181921] to-transparent" />
+      </div>
+
+    </div>
+
+
   );
 };
 
