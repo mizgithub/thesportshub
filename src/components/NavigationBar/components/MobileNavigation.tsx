@@ -8,7 +8,7 @@ const MobileNavigation = () => {
     return (
         <div className="flex flex-row justify-between items-center gap-[16px] justify-center">
        
-        <div className="flex flex-row gap-[10px] md:gap-[16px] items-center">
+        <div className="flex flex-row gap-[8px] md:gap-[16px] items-center">
                 
                  <div className="flex rounded-full bg-[#00000026] p-[8px] items-center justify-center cursor-pointer">
                     <BallIconV2 className="w-[16px] h-[16px] "/>
@@ -19,9 +19,9 @@ const MobileNavigation = () => {
                <div className="flex rounded-full bg-[#00000026] p-[8px] items-center justify-center cursor-pointer">
                     <EnglandFlagCircleIcon className="w-[16px] h-[16px] "/>
                 </div>
-                <div className="flex flex-row gap-[10px] rounded-[9999px] bg-[#00000026] flex-grow h-[40px] px-[16px] py-[8px] items-center justify-center cursor-pointer">
+                <div className="flex flex-row gap-[8px] rounded-[9999px] bg-[#00000026] flex-grow h-[40px] px-[8px] py-[4px] items-center justify-center cursor-pointer">
                   
-                    <span className="text-[16px] font-[500] leading-[150%]  text-[#E6E0E9] font-poppins">2024/25</span>
+                    <span className="text-[12px] font-[300] leading-[16px]  text-[#E6E0E9] font-poppins">2024/25</span>
                     <BiChevronDown className="w-[16px] h-[16px] text-[#E6E0E9]"/>
                 </div>
                
