@@ -2,7 +2,7 @@
 // import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import Match from './pages/match/Match';
+import Match from './pages/match-fixsture/Match';
 import MatchDetails from './pages/match-details/MatchDetails';
 
 

@@ -28,7 +28,7 @@ const formatDate = (date: Date): { dayName: string, monthDay: string } => {
 
 const HorizontalCalendar = () => {
   const today = new Date();
-  const daysToShow = 14; 
+  const daysToShow = 3; 
   const calendarRef = useRef<HTMLDivElement>(null);
   const todayRef = useRef<HTMLDivElement>(null); // Type the ref for the 'today' element
 
@@ -63,18 +63,18 @@ const HorizontalCalendar = () => {
   return (
     <div 
       ref={calendarRef}
-      className="flex overflow-x-auto  scrollbar-hide bg-gradient-to-r from-[#181921] via-[#ffffff] to-[#181921] bg-clip-text text-transparent"
+      className="flex overflow-x-auto gap-[8px] scrollbar-hide bg-gradient-to-r from-[#181921] via-[#ffffff] to-[#181921] bg-clip-text text-transparent"
       // Reminder: you need the custom CSS for `scrollbar-hide`
     >
       {dates.map((day: CalendarDay) => (
         <div
           key={day.date.toISOString()}
           ref={day.isToday ? todayRef : null}
-          className={`flex flex-col items-center justify-center p-3 rounded-lg cursor-pointer transition duration-300 ease-in-out w-15 h-15 flex-shrink-0`
+          className={`flex flex-col items-center justify-center p-3 font-[400] rounded-lg cursor-pointer ${day.isToday ? 'bg-[#1D1E2B] rounded-[20px] text-[#00FFA5]' : ''}`
           }
         >
-          <span className="text-[14px] font-[400]">{day.dayName}</span>
-          <span className="text-[12px] font-[400]">{day.monthDay}</span>
+          <span className="text-[14px] font-[400] text-center">{day?.isToday ? "Today" : day.dayName}</span>
+          <span className="text-[12px] font-[400] text-center">{day.monthDay}</span>
         </div>
       ))}
     </div>

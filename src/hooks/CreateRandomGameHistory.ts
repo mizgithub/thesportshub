@@ -106,11 +106,9 @@ export function generateMatchHistory(currentMinute: string): MatchEvents {
     });
   }
 
-  // ✅ SORT CHRONOLOGICALLY
   events.sort((a, b) => a.minute - b.minute);
   const reverse_events = events.reverse();
 
-  // ✅ SPLIT BY HALF
   const beforeHalf = reverse_events
     .filter(e => e.minute <= 45)
     .map(({  ...rest }) => rest);

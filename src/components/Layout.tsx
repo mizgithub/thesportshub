@@ -8,7 +8,7 @@ const Layout = ()=>{
            <div>
                 <NavigationLayout />
            </div>
-           <main className="mx-auto w-full md:w-[820px] border-gray-100 bg-[#181921] mt-[60px]">
+           <main className="mx-auto w-full md:w-[820px] border-gray-100 bg-[#181921] mt-[60px] md:mt-[100px]">
                 <Outlet />
            </main>
    
