@@ -25,9 +25,7 @@ const MobileNavigation = () => {
                     <span className="text-[16px] font-[500] leading-[150%]  text-[#E6E0E9] font-poppins">2024/25</span>
                     <BiChevronDown className="w-[16px] h-[16px] text-[#E6E0E9]"/>
                 </div>
-                <div className="flex rounded-full bg-[#00000026] p-[8px] items-center justify-center cursor-pointer">
-                    <UKFlagCircleIcon className="w-[16px] h-[16px] "/>
-                </div>
+               
         </div>
         <div className="">
             <BiMenu className="w-[32px] h-[32px] text-white"/>

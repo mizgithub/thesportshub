@@ -7,7 +7,7 @@ const NavigationLayout = () => {
 
             <div className="flex gap-8px items-center justify-between w-full ">
                 {/* logo */}
-                <div className='mx-[16px] items-center justify-center'>
+                <div className='mx-[16px] items-center justify-center flex-grow'>
                     <LogoIcon className="h-[26px] w-[82px] md:h-[60px] md:w-[200px]" />
                 </div>
 
