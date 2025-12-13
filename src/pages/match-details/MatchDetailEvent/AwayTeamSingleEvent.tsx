@@ -15,7 +15,7 @@ const AwayTeamSingleEvent = ({upperTitle, lowerTitle, Icon}:propType) => {
             <div>
                 {Icon && <Icon className="w-[12px] h-[12px]"/>}
             </div>
-            <div className="flex flex-col flex-gow">
+            <div className="flex flex-col flex-gow items-start">
                 <span className="text-[12px] font-[400] leading-[16px]">{upperTitle}</span>
                 <span className="text-[12px] font-[400] leading-[16px] text-[#6B7280]">{lowerTitle}</span>
             </div>

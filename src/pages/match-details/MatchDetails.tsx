@@ -6,7 +6,7 @@ const MatchDetails = ()=>{
     const {eventId} = useParams();
 const { events } = useMatchHistory({ id: eventId??"" });
     return(
-        <div className="w-full flex flex-col gap-[16px]">
+        <div className="w-full flex flex-col gap-[16px] h-full">
             <MatchHead 
                 homeTeam={events?.eventDetail?.homeTeam}
                 awayTeam={events?.eventDetail?.awayTeam}
