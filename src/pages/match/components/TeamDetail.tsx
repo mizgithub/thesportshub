@@ -2,6 +2,7 @@ import type { TeamDetail } from "../../../types";
 import { FaCheck } from "react-icons/fa";
 // import RedCard from '../../../assets/RedCard.svg?react';
 import YellowCard from '../../../assets/YellowCard.svg?react';
+import RedCard from '../../../assets/RedCard.svg?react';
 
 
 interface TeamDetailPropType {
@@ -17,7 +18,23 @@ const TeamDetailCard = ({ team }: TeamDetailPropType) => {
             <div className="flex flex-row justify-start items-center gap-[8px] p-[8px] h-[18px] w-[200px] md:w-[660px]">
                 <img src={team.teamBadge} className="h-[16.55px] w-[16px]" />
                 <span className="text-[12px] leading-[16px] font-[400] whitespace-normal">{team.teamName}</span>
-                <YellowCard />
+                <div className="flex flex-row gap-[2px]">
+                    {
+                        team.redcardCount > 0 && Array.from({ length: team.redcardCount }).map((_, index) => (
+                            <RedCard key={index}/>
+                        ))
+                        
+                    }
+                    {
+                        team.yellowCardCount > 0 && Array.from({ length: team.yellowCardCount }).map((_, index) => (
+                            <YellowCard key={index}/>
+                        ))
+                        
+                    }
+                    
+                </div>
+                
+                
                
                 <div className="flex flex-row justify-start bg-[#26273B] rounded-[100px] p-[4px] items-center">
                     <FaCheck className="w-[7px] h-[5px] text-[#00FFA5]" />

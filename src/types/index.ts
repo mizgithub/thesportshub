@@ -2,6 +2,7 @@ export interface RawEvent {
     dateEvent: string | null;
     dateEventLocal: string | null;
     idAPIfootball: string | null;
+    idEvent:string|null;
     idAwayTeam: string | null;
     idHomeTeam: string | null;
     idLeague: string | null;
@@ -62,6 +63,7 @@ export interface EventDetail {
     liveTime: string;
     homeTeam: TeamDetail;
     awayTeam: TeamDetail;
+    eventId:string;
 }
 
 export interface Event {
@@ -83,4 +85,47 @@ export interface EventButton{
 export interface LiveScoreMenu{
     name:string;
     href:string;
+}
+export interface MatchHistoryType {
+  title: string;
+  type: string; // corner, red card, yellow card, goal, change, injury
+  time: string;
+  playerIn: string | null;
+  playerOut: string | null;
+  playerAffected: string | null;
+  goalPlayerName?: string | null;
+  assistPlayerName?: string | null;
+  teamType: string; // homeTeam, awayTeam
+}
+
+// export interface MatchHistoryType {
+//   /** A descriptive summary of the event (e.g., "Goal! Scored by Elias") */
+//   title: string;
+//   /** The specific type of the event (e.g., "goal", "yellow card") */
+//   type: EventType;
+//   /** The minute of the match as a string (e.g., "30'") */
+//   time: string;
+//   /** The minute of the match as a number for sorting purposes */
+//   minute: number;
+//   /** The player coming IN for a substitution ('change' event) */
+//   playerIn: string | null;
+//   /** The player going OUT for a substitution ('change' event) */
+//   playerOut: string | null;
+//   /** The player involved in an event like a card or injury */
+//   playerAffected: string | null;
+//   /** The team this event is for */
+//   teamType: TeamType;
+//   // --- New Goal-Specific Properties ---
+//   /** The name of the player who scored the goal (only for 'goal' event) */
+//   goalPlayerName: string | null;
+//   /** The name of the player who assisted the goal (only for 'goal' event) */
+//   assistPlayerName: string | null;
+// }
+export interface MatchEvents{
+    beforeHalf:MatchHistoryType[] | [];
+    afterHalf:MatchHistoryType[] |[];
+}
+export interface MatchDetail{
+    eventDetail:EventDetail |null;
+    history:MatchEvents;
 }

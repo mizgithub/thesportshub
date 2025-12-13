@@ -13,7 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />} >
                 <Route index element={<Match />}/>
-                <Route path='match/:eventId' element={<MatchDetails />} />
+                <Route path='matchdetails/:eventId' element={<MatchDetails />} />
             </Route>
           </Routes>
        </BrowserRouter>

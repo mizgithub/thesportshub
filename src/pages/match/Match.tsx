@@ -3,10 +3,8 @@ import useLiveEvents from "../../hooks/useLiveEvents";
 import LiveOptions from "./components/LiveOptions";
 import CalendarCard from "./components/Calendar";
 
-const Match = ()=>{
-    const list = [1,2,3];
-    const {events} = useLiveEvents();
-    console.log(events);
+const Match = () => {
+    const { events } = useLiveEvents();
     return (
         <div className="flex flex-col gap-[16px] p-[16px]">
             <div className="hidden lg:block">
@@ -14,18 +12,18 @@ const Match = ()=>{
             </div>
 
             <div>
-                  <CalendarCard />
+                <CalendarCard />
             </div>
 
             <div>
                 <LiveOptions />
             </div>
-            
-            {
-                list?.map(l=>(
-                    <MatchList key={l} matchListData={events}/>
-                ))
-            }
+
+
+
+            <MatchList matchListData={events} />
+
+
         </div>
     );
 }

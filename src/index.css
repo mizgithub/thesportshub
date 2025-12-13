@@ -13,7 +13,18 @@
 html, body {
   font-family: 'Inter', sans-serif;
 }
+@keyframes stretch-animation {
+  0%, 100% {
+    transform: scaleX(0.2); /* Start and end narrow (20% width visually) */
+  }
+  50% {
+    transform: scaleX(1); /* Expand to full width */
+  }
+}
 
+.animate-stretch {
+  animation: stretch-animation 2s infinite ease-in-out;
+}
 
 
 /* :root {
