@@ -1,7 +1,6 @@
 import WorldIcon from '../../../assets/WorldIcon.svg?react';
 import BallIconV2 from '../../../assets/BallIconV2.svg?react';
 import EnglandFlagCircleIcon from '../../../assets/EnglandFlagCircleIcon.svg?react';
-import UKFlagCircleIcon from '../../../assets/UKFlagCircleIcon.svg?react';
 import { BiChevronDown } from "react-icons/bi";
 // import { Hamburg } from "react-icons/fa";
 import { BiMenu } from "react-icons/bi";

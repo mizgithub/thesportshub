@@ -3,7 +3,7 @@ import DesktopNavigation from './components/DesktopNavigation';
 import MobileNavigation from './components/MobileNavigation';
 const NavigationLayout = () => {
     return (
-        <div className="flex flex-row px-[16px] py-[16px] bg-[#6D00FF] w-full fixed top-0 z-10">
+        <div className="flex flex-row px-[8px] py-[16px] bg-[#6D00FF] w-full fixed top-0 z-10">
 
             <div className="flex gap-8px items-center justify-between w-full ">
                 {/* logo */}
