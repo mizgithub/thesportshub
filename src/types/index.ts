@@ -58,12 +58,15 @@ export interface TeamDetail {
     scoreBeforeHalf: number;
     scoreFullTime: number;
     teamBadge: string;
+    isSecondLeg?:boolean;
+    
 }
 export interface EventDetail {
     liveTime: string;
     homeTeam: TeamDetail;
     awayTeam: TeamDetail;
     eventId:string;
+
 }
 
 export interface Event {

@@ -2,6 +2,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import HorizontalScrollMenu from "./Menu";
 import LiveScore from "./LiveScore";
 import type { TeamDetail } from "../../../types";
+import { Link } from "react-router-dom";
 
 interface propType{
     homeTeam?:TeamDetail;
@@ -20,9 +21,9 @@ const MatchHead = ({homeTeam, awayTeam, liveTime, date, leagueName}:propType) =>
                 <div>
                     <BsArrowLeft className="h-[24px] w-[24px]" />
                 </div>
-                <div>
+                <Link to={'/'}>
                     <span className="text-[14px] leading-[20px] font-[400]">{leagueName}</span>
-                </div>
+                </Link>
             </div>
 
             {/* live score */}

@@ -24,7 +24,7 @@ export const EventRearrangement = ({ rawEvents }: propsType): Event[] => {
 
         const homeScore = liveTime != "NS" ? parseNumber(raw.intHomeScore) : 0;
         const awayScore = liveTime != "NS" ? parseNumber(raw.intAwayScore) : 0;
-
+        const isSecondLeg = Math.random() < 0.5; // Randomly assign for demonstration
         const homeTeam: TeamDetail = {
             teamName: raw.strHomeTeam ?? "",
             isHomeTeam: true,
@@ -33,9 +33,10 @@ export const EventRearrangement = ({ rawEvents }: propsType): Event[] => {
             isPenality: false,
             yellowCardCount: liveTime != "NS" ? Math.floor(Math.random() * 3) : 0,// Random yellow card count for demonstration
             redcardCount: liveTime != "NS" ? Math.floor(Math.random() * 3) : 0,// Random red card count for demonstration
-            scoreBeforeHalf: 0,
+            scoreBeforeHalf: isSecondLeg ? Math.floor(Math.random() * 3) : 0,
             scoreFullTime: homeScore,
             teamBadge: raw.strHomeTeamBadge ?? "",
+            isSecondLeg: isSecondLeg,
         };
 
         const awayTeam: TeamDetail = {
@@ -46,9 +47,10 @@ export const EventRearrangement = ({ rawEvents }: propsType): Event[] => {
             isPenality: false,
             yellowCardCount: liveTime != "NS" ? Math.floor(Math.random() * 3) : 0,// Random yellow card count for demonstration
             redcardCount: liveTime != "NS" ? Math.floor(Math.random() * 3) : 0,// Random red card count for demonstration
-            scoreBeforeHalf: 0,
+            scoreBeforeHalf: isSecondLeg ? Math.floor(Math.random() * 3) : 0,
             scoreFullTime: awayScore,
             teamBadge: raw.strAwayTeamBadge ?? "",
+            isSecondLeg: isSecondLeg,
         };
 
         const eventDetail: EventDetail = {

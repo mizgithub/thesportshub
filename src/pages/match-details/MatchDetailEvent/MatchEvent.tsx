@@ -16,13 +16,22 @@ const MatchEvent = ({ beforeHalf, afterHalf, liveTime }: propType) => {
             <div className="h-[20px] flex justify-start w-full">
                 <span className="text-[14px] text-[500] leading-[20px] text-white justify-start">Events</span>
             </div>
+            {liveTime!=="NS" &&<>
             {liveTime && liveTime >= '46' &&
                 <>
                     {liveTime >= '90' &&
-                        <div className="flex flex-row gap-[10px] justify-center items-center">
-                            <hr className="flex-grow text-[#292B41] border-[1px] border-[#292B41]" />
-                            <span className="text-[400] text-[12px] leading-[16px] text-[#E5E7EB]">Fulltime 2-1</span>
-                            <hr className="flex-grow text-[#292B41] border-[1px] border-[#292B41]" />
+                        <div className="flex flex-row gap-[10px] justify-center items-center w-full">
+                            <hr className="flex-grow border border-[#292B41]" />
+                            <span className="text-[400] text-[12px] leading-[16px] text-[#E5E7EB]">Fulltime &nbsp;
+
+                                {
+                                    afterHalf?.filter(event => event.teamType === 'homeTeam' && event.type === 'goal').length || 0
+                                } - {
+                                    afterHalf?.filter(event => event.teamType === 'awayTeam' && event.type === 'goal').length ||
+                                    0
+                                }
+                            </span>
+                            <hr className="flex-grow border border-[#292B41]" />
                         </div>
                     }
                     <div>
@@ -31,10 +40,17 @@ const MatchEvent = ({ beforeHalf, afterHalf, liveTime }: propType) => {
                 </>}
 
             {liveTime && liveTime >= '45' &&
-                <div className="flex flex-row gap-[10px] justify-center items-center">
-                    <hr className="flex-grow text-[#292B41] border-[1px] border-[#292B41]" />
-                    <span className="text-[400] text-[12px] leading-[16px] text-[#E5E7EB]">Halftime 2-1</span>
-                    <hr className="flex-grow text-[#292B41] border-[1px] border-[#292B41]" />
+                <div className="flex flex-row gap-[10px] justify-center items-center w-full">
+                    <hr className="flex-grow border border-[#292B41]" />
+                    <span className="text-[400] text-[12px] leading-[16px] text-[#E5E7EB] gap-[2px] flex">Halftime &nbsp;
+                        {
+                            beforeHalf?.filter(event => event.teamType === 'homeTeam' && event.type === 'goal').length || 0
+                        } - {
+                            beforeHalf?.filter(event => event.teamType === 'awayTeam' && event.type === 'goal').length ||
+                            0
+                        }
+                    </span>
+                    <hr className="flex-grow border border-[#292B41]" />
                 </div>
             }
 
@@ -42,7 +58,8 @@ const MatchEvent = ({ beforeHalf, afterHalf, liveTime }: propType) => {
             <div>
                 <DetailedHistory history={beforeHalf} />
             </div>
-
+            </>
+        }
 
             <div className="flex flex-row gap-[10px] justify-center items-center w-full">
                 <hr className="flex-grow border border-[#292B41]" />
