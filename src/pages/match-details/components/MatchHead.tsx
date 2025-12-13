@@ -17,14 +17,13 @@ const MatchHead = ({homeTeam, awayTeam, liveTime, date, leagueName}:propType) =>
         <div className="flex flex-col justify-between w-full md:w-[707px] bg-[#1D1E2B] h-[198px] pt-[8px]">
 
             {/* back link */}
-            <div className="flex flex-row py-[8px] px-[16px] h-[40px] gap-[16px] ">
+            <Link to={'/'} className="flex flex-row py-[8px] px-[16px] h-[40px] gap-[16px] ">
                 <div>
                     <BsArrowLeft className="h-[24px] w-[24px]" />
                 </div>
-                <Link to={'/'}>
+             
                     <span className="text-[14px] leading-[20px] font-[400]">{leagueName}</span>
-                </Link>
-            </div>
+            </Link>
 
             {/* live score */}
             <div>

@@ -23,11 +23,9 @@ const Button  = (props:EventButton)=>{
                 </div>
                 
                 {/* Badge (16x16px circle with text inside) */}
-                <div>
-                    <div className={`flex items-center justify-center w-[16px] h-[16px] leading-[16px] text-[12px] font-[500] bg-[#181921] rounded-[12px] gap-[4px] ${badgeCount}`}>
+                    <div className={`flex items-center justify-center w-[16px] h-[16px] leading-[16px] text-[11px] font-[600] bg-[#181921] rounded-[12px] gap-[4px] ${badgeCount}`}>
                         {props.buttonCountBadge}
                     </div>
-                </div>
             </div>
         </Link>
     );
