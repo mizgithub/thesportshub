@@ -1,5 +1,6 @@
 /* Import Inter FIRST (safe) */
 @import "@fontsource/inter/index.css";
+@import "@fontsource/poppins/index.css";
 
 /* Tailwind layers (MUST stay in this order) */
 @import 'tailwindcss';
@@ -8,10 +9,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Apply Inter globally */
 html, body {
   font-family: 'Inter', sans-serif;
+}
+span.font-poppins {
+  font-family: 'Poppins', sans-serif;
 }
 @keyframes stretch-animation {
   0%, 100% {

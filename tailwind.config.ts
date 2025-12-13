@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"], // Tailwind font-sans uses Inter
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
