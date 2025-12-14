@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# ⚽ Sports Hub Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project simulates a sports events application featuring a match fixture list and detailed match logs, showcasing dynamic data handling and UI presentation.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Match Fixtures Page:** Displays a list of upcoming and recent sports events.
+* **Match Detail Page (Match Log):** Provides a comprehensive log of a specific match's events.
+* **Dynamic Data Generation:** Includes a helper function to randomly generate missing data points to ensure the UI is fully populated and dynamic, mimicking real-time event updates.
+    * **Generated Data Points:** Yellow/red card counts, minute-by-minute game event logs (e.g., goals, substitutions).
 
-## React Compiler
+## 💻 Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Build Tool:** Vite
+* **Package Manager:** npm
+* **API Integration:** Open sports API
 
-## Expanding the ESLint configuration
+## 🌐 API Data Handling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project utilizes an **open-source sports API** to fetch event data.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> **Note:** The external API does not provide all the granular data required by the UI design (e.g., minute-by-minute events, card counts). Therefore, a custom helper function was implemented to **synthetically generate** this missing data. This allows the application to demonstrate the intended dynamic UI behavior.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Follow these steps to set up and run the project locally.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Node.js
+* npm
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation and Execution
+
+1.  **Clone the project repository:**
+    ```bash
+    git clone [Your Repository URL]
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd thesportshub
+    ```
+
+3.  **Install all required packages:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the Vite development server:**
+    ```bash
+    npm run dev
+    ```
+
+5.  **Access the application:**
+    Open the provided URL by Vite (e.g., `http://localhost:5173/`) in your web browser.
