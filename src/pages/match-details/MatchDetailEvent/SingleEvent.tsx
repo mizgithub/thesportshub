@@ -15,7 +15,7 @@ const SingleEvent = ({ history }: propType) => {
     console.log("history list");
     console.log(history);
     return (
-        <div className="flex flex-row gap-[4px] w-full items-center">
+        <div className="flex flex-row gap-[4px] items-center">
             {/* home team event at time t*/}
             {/* <HomeTeamSingleEvent upperTitle={history?.playerIn ?? ""} lowerTitle={history?.playerOut ?? ""} Icon={FlagIcon} /> */}
             {history?.teamType === "homeTeam" ?
