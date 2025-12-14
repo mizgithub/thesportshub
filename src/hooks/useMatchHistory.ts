@@ -9,9 +9,10 @@ const API_URL = "https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=133
 
 interface propType{
     id:string|null;
+    time:string|null;
 }
 
-const useMatchHistory = ({id}:propType) => {
+const useMatchHistory = ({id, time}:propType) => {
     const [events, setEvents] = useState<MatchDetail | null>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -33,7 +34,7 @@ const useMatchHistory = ({id}:propType) => {
                 console.log(data);
                 // const firstEvent:RawEvent = data.events[0];
                 // console.log(firstEvent);
-                const eventsArranged: Event[] = EventRearrangement({rawEvents:data.events});
+                const eventsArranged: Event[] = EventRearrangement({rawEvents:data.events, time:time});
                 const randomGameHistory = generateMatchHistory(eventsArranged? eventsArranged[0]?.eventDetail[0]?.liveTime:"");
                 
                 setEvents({
@@ -61,7 +62,7 @@ const useMatchHistory = ({id}:propType) => {
     useEffect(() => {
         fetchEvents();
         
-    }, [id]);
+    }, [time]);
 
     return { events, loading, error }
 

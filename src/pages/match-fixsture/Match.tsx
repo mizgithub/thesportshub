@@ -6,13 +6,10 @@ import CalendarCard from "./components/Calendar";
 import type { EventButton } from "../../types/index";
 import LiveIcon from '../../assets/LiveIcon.svg?react';
 import HeartIcon from '../../assets/HeartIcon.svg?react';
-import type { Event } from "../../types/index";
 
 
 const Match = () => {
     const { events } = useLiveEvents();
-    // const [totalEvents, setTotalEvents] = useState(0);
-    // const [liveEvents, setLiveEvents] = useState(0);
     const [options,setOptions] = useState<EventButton[]>([])
 
    useEffect(() => {

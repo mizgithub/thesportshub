@@ -49,7 +49,7 @@ const SingleEvent = ({ history }: propType) => {
 
             {/* time instance */}
             <div className='w-[48px] h-[19px] rounded-[100px] px-[8px] py-[2px] bg-[#26273B] items-center justify-center flex'>
-                <span className='font-[400] text-[11px] text-white leading-[15px] justfy-center items-center'>{history?.time}</span>
+                <span className='font-[400] text-[11px] text-white leading-[15px] justfy-center items-center'>{history?.time+"'"}</span>
             </div>
 
 

@@ -13,7 +13,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />} >
                 <Route index element={<Match />}/>
-                <Route path='matchdetails/:eventId' element={<MatchDetails />} />
+                {/* <Route path='matchdetails/:eventId' element={<MatchDetails />} /> */}
+                <Route path="/matchdetails/:eventId/:time" element={<MatchDetails />} />
+
             </Route>
           </Routes>
        </BrowserRouter>

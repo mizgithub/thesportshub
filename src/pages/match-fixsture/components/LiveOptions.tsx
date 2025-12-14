@@ -13,7 +13,7 @@ const LiveOptions = ({options}:LiveOptionsPropType)=>{
         <div className="flex flex-row w-full md-[w-328px] gap-[16px] h-[36px]">
             {
                 optionButtons?.map((button:EventButton)=>(
-                    <Button {...button} />
+                    <Button key={button.id} {...button} />
                 ))
             }
         </div>

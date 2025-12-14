@@ -3,8 +3,9 @@ import { getRandomMatchTime } from "./RandomMatchTime";
 
 interface propsType {
     rawEvents: RawEvent[],
+    time:string|null
 }
-export const EventRearrangement = ({ rawEvents }: propsType): Event[] => {
+export const EventRearrangement = ({ rawEvents, time }: propsType): Event[] => {
     const parseNumber = (value: string | null): number =>
         value ? Number(value) : 0;
 
@@ -20,7 +21,7 @@ export const EventRearrangement = ({ rawEvents }: propsType): Event[] => {
     rawEvents?.forEach((raw) => {
         const leagueName = raw.strLeague ?? "Unknown League";
 
-        const liveTime = getRandomMatchTime();
+        const liveTime = getRandomMatchTime(time??"");
 
         const homeScore = liveTime != "NS" ? parseNumber(raw.intHomeScore) : 0;
         const awayScore = liveTime != "NS" ? parseNumber(raw.intAwayScore) : 0;

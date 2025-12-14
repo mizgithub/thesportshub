@@ -3,8 +3,8 @@ import MatchHead from "./components/MatchHead";
 import MatchEvent from "./MatchDetailEvent/MatchEvent";
 import useMatchHistory from "../../hooks/useMatchHistory";
 const MatchDetails = () => {
-    const { eventId } = useParams();
-    const { events } = useMatchHistory({ id: eventId ?? "" });
+    const { eventId, time } = useParams();
+    const { events } = useMatchHistory({ id: eventId ?? "", time:time??"" });
     return (
         <div className="w-full flex flex-col gap-[16px] bg-">
             <MatchHead
@@ -15,7 +15,7 @@ const MatchDetails = () => {
                 leagueName={"English Premier League"}
             />
             <div className="md:w-[707px] mx-[16px] md:mx-0">
-                {events && <MatchEvent beforeHalf={events?.history.beforeHalf} afterHalf={events?.history.afterHalf} liveTime={events?.eventDetail?.liveTime} />}
+                {events && <MatchEvent beforeHalf={events?.history.beforeHalf} afterHalf={events?.history.afterHalf} liveTime={time} />}
 
             </div>
         </div>

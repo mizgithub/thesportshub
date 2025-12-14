@@ -34,7 +34,7 @@ const LiveScore = ({ homeTeam, awayTeam, liveTime, date }: propType) => {
                 </div>
                 <div className="text-[#9CA3AF] text-[11px] leading-[15px] font-[400]">
 
-                    <div className={`text-[10px] font-[400] leading-[15px] justify-center text-white ${liveTime === "FT" ? "bg-[#EE5E52]" : ""}`}>{liveTime == "NS"?"23:00":liveTime}</div>
+                    <div className={`text-[10px] font-[400] leading-[15px] justify-center text-white ${liveTime === "FT" ? "bg-[#EE5E52] rounded-[4px] px-[4px]" : ""}`}>{liveTime == "NS"?"23:00":liveTime=="FT"?"Finished":liveTime}</div>
 
                 </div>
                 {date}

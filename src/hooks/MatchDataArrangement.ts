@@ -1,9 +1,9 @@
 import type { RawEvent, EventDetail, TeamDetail } from "../types";
-import { getRandomMatchTime } from "./RandomMatchTime";
+// import { getRandomMatchTime } from "./RandomMatchTime";
 
 interface propsType{
     raw?:RawEvent,
-    liveTime?:string
+    liveTime:string
 }
 const MatchRearrangement = ({raw,liveTime}:propsType): EventDetail | null=> {
     const parseNumber = (value: string | null): number =>
@@ -46,7 +46,7 @@ const MatchRearrangement = ({raw,liveTime}:propsType): EventDetail | null=> {
         };
 
         const eventDetail: EventDetail = {
-            liveTime: liveTime??getRandomMatchTime(),
+            liveTime: liveTime,
             homeTeam,
             awayTeam,
             eventId:raw.idAPIfootball??""

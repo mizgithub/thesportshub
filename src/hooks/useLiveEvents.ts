@@ -23,7 +23,7 @@ const useLiveEvents = () => {
             if (data) {
              
                 //rearrangement
-                const eventsArranged: Event[] = EventRearrangement({rawEvents:data?.events})??[]
+                const eventsArranged: Event[] = EventRearrangement({rawEvents:data?.events, time:""})??[]
                 setEvents([]);
                 setEvents(eventsArranged);
             }
