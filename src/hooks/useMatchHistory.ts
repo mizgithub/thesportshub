@@ -3,8 +3,7 @@ import type {MatchDetail, Event} from "../types/index";
 // import MatchRearrangement from "./MatchDataArrangement";
 import { EventRearrangement } from "./FixstureDataArrangement";
 import { generateMatchHistory } from "./CreateRandomGameHistory";
-// const API_URL = "https://www.thesportsdb.com/api/v1/json/3/lookupevent.php";
-const API_URL = "https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=133602";
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 interface propType{

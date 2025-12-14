@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Event} from "../types/index";
 import { EventRearrangement } from "./FixstureDataArrangement";
-const API_URL = "https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=133602";
+const API_URL = import.meta.env.VITE_API_URL;
 const useLiveEvents = () => {
     const [events, setEvents] = useState<Event[]>([]);
     const [loading, setLoading] = useState(true);
