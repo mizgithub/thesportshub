@@ -12,7 +12,7 @@ interface propType{
     time:string|null;
 }
 
-const useMatchHistory = ({id, time}:propType) => {
+const useMatchHistory = ({time}:propType) => {
     const [events, setEvents] = useState<MatchDetail | null>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
