@@ -41,7 +41,7 @@ export function generateMatchHistory(currentMinute: string): MatchEvents {
   let awayCornerCount = 0;
 
   const totalEvents = getRandomInt(5, 10);
-
+  currentMinute = currentMinute=="HT"?"45":currentMinute=="FT"?"90":currentMinute;
   for (let i = 0; i < totalEvents; i++) {
     const minute = getRandomInt(1, parseInt(currentMinute));
     const teamType = Math.random() > 0.5 ? "homeTeam" : "awayTeam";
