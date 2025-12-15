@@ -34,7 +34,7 @@ Follow these steps to set up and run the project locally.
 
 1.  **Clone the project repository:**
     ```bash
-    git clone [Your Repository URL]
+    git clone https://github.com/mizgithub/thesportshub.git
     ```
 
 2.  **Navigate to the project directory:**
